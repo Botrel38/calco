@@ -14,7 +14,7 @@ public class Calculatrice {
         System.out.print("Entrez le deuxième nombre : ");
         double b = scanner.nextDouble();
 
-        System.out.print("Choisissez une opération (+, -, *, /, ^) : ");
+        System.out.print("Choisissez une opération (+, -, *, /) : ");
         String op = scanner.next();
 
         double resultat;
@@ -37,9 +37,6 @@ public class Calculatrice {
                 }
                 resultat = a / b;
                 break;
-            case "^":
-                resultat = puissance(a, (int)b); // appel de la fonction puissance
-                break;
             default:
                 System.out.println("Opération non reconnue.");
                 scanner.close(); // fermeture
@@ -49,14 +46,5 @@ public class Calculatrice {
         System.out.println("Résultat : " + resultat);
 
         scanner.close(); // on ferme le scanner à la fin
-    }
-
-    // Fonction pour calculer a^b
-    public static double puissance(double base, int exposant) {
-        double resultat = 1;
-        for (int i = 0; i < exposant; i++) {
-            resultat *= base;
-        }
-        return resultat;
     }
 }
